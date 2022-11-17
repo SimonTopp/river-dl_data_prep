@@ -35,7 +35,7 @@ aggDict:
         agg_level: 'seg_id_nat'
         agg_function: 'mean' #any pandas aggregation function or False (no aggregation)
 
-outDir: "./data_out"
+outDir: "data_out"
 
 #suffix added to the end of the output files
 suffix: "no3558" 

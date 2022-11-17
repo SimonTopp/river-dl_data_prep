@@ -6,6 +6,9 @@ channels:
 dependencies:
     - numpy
     - pandas
+    - xarray
+    - dask
+    - zarr
     - pip
     - snakemake
     - pip:
