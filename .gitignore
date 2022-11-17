@@ -10,3 +10,4 @@ temp*/
 *.txt
 data*/
 .snakemake/
+.Rproj.user
