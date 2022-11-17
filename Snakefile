@@ -1,5 +1,6 @@
 import os
 
+
 from getSciencebaseItems import get_sciencebase_data
 from makeArrays import makeArrays
 from makeDistanceMatrix import makeDistMatrix

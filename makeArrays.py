@@ -8,7 +8,7 @@ Created on Wed Sep 15 12:15:28 2021
 import os
 import numpy as np
 import pandas as pd
-import xarray as xr
+#import xarray as xr
 from copy import deepcopy
 from datetime import date
 
@@ -20,7 +20,7 @@ def tardir(path, tar_name):
             for file in files:
                 tar_handle.add(os.path.join(root, file))
 
-def makeArrays(arrayName, fileName=[], subSetList=[""],subsetDict = {}, tarFiles = False, outPath="",segsToExclude=[], suffix = "", qaDict={}, aggDict={}):    
+def makeArrays(arrayName, fileName=[], subSetList=[""],subsetDict = {}, tarFiles = False, outPath="",segsToExclude=[], suffix = "", qaDict={}, aggDict={}):
     #read in the data
     tempDF = pd.read_csv(fileName[0].replace(".zip",".csv"))
     colsToDrop = ['subseg_id','site_id','in_time_holdout','in_space_holdout','test','min_temp_c',
@@ -126,5 +126,5 @@ def makeArrays(arrayName, fileName=[], subSetList=[""],subsetDict = {}, tarFiles
             tardir(os.path.join(outPath,arrayName+"_full"+suffix),os.path.join(outPath,arrayName+"_full"+suffix+".tar"))
             
             
-    with open("log_%s%s_%s.txt"%(arrayName,suffix,date.today().strftime("%Y%m%d")),"w+") as f:
+    with open("logs_out/log_%s%s_%s.txt"%(arrayName,suffix,date.today().strftime("%Y%m%d")),"w+") as f:
         f.write(outTxt)
